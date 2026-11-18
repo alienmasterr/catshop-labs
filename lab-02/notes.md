@@ -56,3 +56,5 @@ cache
 
 cleaned cache: 22s vs 14s
 
+![1795035752559](image/notes/1795035752559.png)
+
