@@ -45,3 +45,12 @@ second push will overwrite the tag (tag is movable), and someone who pulls by th
 ![1795031267701](image/notes/1795031267701.png)
 
 ![1795031307582](image/notes/1795031307582.png)
+
+digest copied manually from the step output. in real production, it's easy to paste the wrong digest or forget to update it after a new build.
+tag is a movable pointer, digest is a hash of specific content. it may happen that someone pushed the tag again, and after restart prod pulled different code. same tag, but different image.
+anyone can pull public package without authentication, while private one can be pulled only by added pepple
+
+cache
+
+![1795032673636](image/notes/1795032673636.png)
+
