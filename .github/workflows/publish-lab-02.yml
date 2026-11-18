@@ -43,7 +43,7 @@ jobs:
         with:
           images: |
             ghcr.io/alienmasterr/marsik-shop
-            alina/marsik-shop
+            alienmasterr/marsik-shop
           tags: type=sha,format=long
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
