@@ -21,7 +21,7 @@ ok
 ((.venv) ) alina@MacBook-Air-Alina catshop-labs % curl localhost:8080/visits
 {"store":"file","visits":1}
 
-# no permissions
+# no write in permissions job publish
     permissions:
       contents: read
       packages: write
@@ -29,3 +29,19 @@ ok
 buildx failed with: ERROR: failed to build: failed to solve: failed to push ghcr.io/alienmasterr/marsik-shop:sha-16e922278a448de4f18971b7bf878ce0fc6bdcda: denied: installation not allowed to Create organization package
 
 ![1795029662318](image/notes/1795029662318.png)
+
+# added packages: write in permissions job publish
+
+![1795030073001](image/notes/1795030073001.png)
+
+why: GITHUB_TOKEN exists always, but by default it has only reading permit. writing into packages must be allowed additionally
+
+my workflow listens only push in lab-02, that's why on PR from fork it does not react. if through pull_request, token would be read-only and without secrets, so publish would fall, because other code shall not publish from my name
+
+second push will overwrite the tag (tag is movable), and someone who pulls by this tag will get another image. with sha-tag this happens only when rerunning the same commit, and then image still can be different, because build does not guarantee by bit reproducibility
+
+![1795031065432](image/notes/1795031065432.png)
+
+![1795031267701](image/notes/1795031267701.png)
+
+![1795031307582](image/notes/1795031307582.png)
