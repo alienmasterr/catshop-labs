@@ -20,3 +20,12 @@ time on 7 tests ±0.34s
 ok
 ((.venv) ) alina@MacBook-Air-Alina catshop-labs % curl localhost:8080/visits
 {"store":"file","visits":1}
+
+# no permissions
+    permissions:
+      contents: read
+      packages: write
+
+buildx failed with: ERROR: failed to build: failed to solve: failed to push ghcr.io/alienmasterr/marsik-shop:sha-16e922278a448de4f18971b7bf878ce0fc6bdcda: denied: installation not allowed to Create organization package
+
+![1795029662318](image/notes/1795029662318.png)
